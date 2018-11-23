@@ -24,6 +24,8 @@
 .navItem > a {
 	padding: 10px 20px;
 	line-height: 60px;
+	color: white;
+	font-weight: bolder;
 }
 body {
 	position: relative;
@@ -90,7 +92,7 @@ body {
 #map {
 	margin: 100px 0;
 }
-li > h1{
+h1{
 	font-weight: bold;
 	font-size: 24px;
 }
@@ -100,5 +102,13 @@ td, th {
     padding: 8px;
 }
 table {
-	width: 800px;
+	width: 600px;
+}
+.table-font{
+	text-align: center;
+}
+li > img{
+	margin-right: 20px;
+	width: 460px;
+	float: left;
 }
