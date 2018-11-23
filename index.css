@@ -94,3 +94,11 @@ li > h1{
 	font-weight: bold;
 	font-size: 24px;
 }
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+table {
+	width: 800px;
+}
