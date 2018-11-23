@@ -1,5 +1,8 @@
 $(document).ready(function() {
 	var imgIndex;
+	var imgBoxHeight;
+	var imgCnt = 36;
+	var imgLine = 4;
 
 	$('#showedImg').css({
 		'marginTop': -parseInt($('#showedImg').css('height')) / 2,
@@ -20,7 +23,7 @@ $(document).ready(function() {
 	});
 
 	(function() {
-		for(var i=0;i<14;i++) {
+		for(var i = 0; i < imgCnt; i++) {
 			var itemStr = '<img data-index="' + (i + 1) + '" class="imgResize" src="image/picture/' + (i + 1) + '.jpg" />';
 
 			$('<li></li>').addClass('imgOp').html(itemStr).appendTo($('#imgBox > ul'));
@@ -34,7 +37,7 @@ $(document).ready(function() {
 			$('#leftDir').css('opacity', 0);
 			leftArrowImg = false;
 		}
-		else if(imgIndex == 14) {
+		else if(imgIndex == imgCnt) {
 			$('#rightDir').css('opacity', 0);
 			rightArrowImg = false;
 		}
@@ -79,10 +82,10 @@ $(document).ready(function() {
 		event.stopPropagation();
 	});
 	$('#rightDir').click(function() {
-		if(imgIndex != 14) {
+		if(imgIndex != imgCnt) {
 			imgIndex++;
 
-			if(imgIndex == 14) {
+			if(imgIndex == imgCnt) {
 				$(this).css('opacity', '0');
 				rightArrowImg = false;
 			}
@@ -96,4 +99,35 @@ $(document).ready(function() {
 		event.stopPropagation();
 	});
 
+	$('#plus').click(function(){
+		if(imgLine > Math.ceil(imgCnt/4)-2) {
+			if(imgLine < Math.ceil(imgCnt/4)) {
+				imgBoxHeight = parseInt($('#imgBox').css('height'));
+				$('#imgBox').css('height', imgBoxHeight + 270);
+				imgLine++;
+			}
+			else return;
+		}
+		else {
+			imgBoxHeight = parseInt($('#imgBox').css('height'));
+			$('#imgBox').css('height', imgBoxHeight + 540);
+			imgLine += 2;
+		}
+	});
+
+	$('#minus').click(function(){
+		if(imgLine < 6) {
+			if(imgLine == 5) {
+				imgBoxHeight = parseInt($('#imgBox').css('height'));
+				$('#imgBox').css('height', imgBoxHeight - 270);
+				imgLine--;
+			}
+			else return;
+		}
+		else {
+			imgBoxHeight = parseInt($('#imgBox').css('height'));
+			$('#imgBox').css('height', imgBoxHeight - 540);
+			imgLine -= 2;
+		}
+	});
 });
