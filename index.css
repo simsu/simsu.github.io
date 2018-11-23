@@ -62,6 +62,7 @@ body {
 	width: 70px;
 	height: 70px;
 	display: block;
+	opacity: 1.0;
 }
 #leftDir {
 	float: left;
