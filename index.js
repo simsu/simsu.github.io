@@ -29,6 +29,22 @@ $(document).ready(function() {
 
 	$('.imgResize').click(function() {
 		imgIndex = $(this).attr('data-index');
+
+		if(imgIndex == 1) {
+			$('#leftDir').css('opacity', 0);
+			leftArrowImg = false;
+		}
+		else if(imgIndex == 14) {
+			$('#rightDir').css('opacity', 0);
+			rightArrowImg = false;
+		}
+		else {
+			$('#leftDir').css('opacity', 1);
+			leftArrowImg = true;
+			$('#rightDir').css('opacity', 1);
+			rightArrowImg = true;
+		}
+
 		$('#showImg').css('visibility', 'visible');
 
 		$('#showedImg').attr('src','image/picture/' + $(this).attr('data-index') + '.jpg');
