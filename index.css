@@ -110,5 +110,6 @@ table {
 li > img{
 	margin-right: 20px;
 	width: 460px;
+	display: block;
 	float: left;
 }
